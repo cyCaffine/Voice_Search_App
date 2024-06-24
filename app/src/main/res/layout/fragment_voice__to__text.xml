@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.Voice_To_TextFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:minHeight="?android:attr/actionBarSize"
+            app:navigationIcon="@drawable/icon_back_button"
+            app:subtitle="Text here..."
+            app:subtitleTextAppearance="@style/ToolbarTitleAppearance"
+            app:subtitleTextColor="?attr/colorPrimaryVariant"
+            app:title="Convert Voice to "
+            app:titleTextAppearance="@style/ToolbarTitleAppearance"
+            app:titleTextColor="?attr/colorPrimaryVariant" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/spinner"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_46sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:endIconDrawable="@drawable/icon_arrow_down_spinner"
+        app:endIconTint="@color/white_cloudy"
+        android:enabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        >
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/dropdowntextview"
+            android:padding="@dimen/_4sdp"
+            android:background="@drawable/background_rounded_solid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:enabled="true"
+            android:dropDownHeight="@dimen/_300sdp"
+            android:layout_gravity="center"
+            android:inputType="none"
+            tools:text="Languages"
+            android:textColor="@color/white_cloudy"
+            android:textSize="@dimen/_14ssp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="128dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:contextClickable="true"-->
+<!--        android:entries="@array/languages"-->
+<!--        android:spinnerMode="dropdown"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />-->
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/microphoneBtn"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:background="@drawable/background_rounded_stroke"
+        android:src="@drawable/icon_microphone"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+    <ScrollView
+        android:id="@+id/voicetotextScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginBottom="@dimen/_18sdp"
+        android:scrollIndicators="end"
+        android:scrollbarThumbVertical="@color/blue"
+        android:scrollbarFadeDuration="2"
+        android:scrollbarSize="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/microphoneBtn"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        >
+
+    <EditText
+        android:id="@+id/voicetotextEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:textSize="@dimen/_12ssp"
+        android:padding="@dimen/_4sdp"
+        android:hint="@string/voice_to_text__hint"
+        tools:text="@string/placeholdertext"
+        android:background="@drawable/background_transparent"
+        />
+    </ScrollView>
+
+
+    <!-- bottom copy n delete btn layout-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="@dimen/_95sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_26sdp"
+        android:background="@drawable/background_rounded_solid"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/voicetotextScroll">
+
+        <ImageButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/background_transparent"
+            android:src="@drawable/icon_delete" />
+
+        <ImageButton
+            android:id="@+id/copyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/background_transparent"
+            android:src="@drawable/icon_copytoclipboard" />
+
+
+    </LinearLayout>
+
+    <!-- For Fab Button Group-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/voicetotextScroll"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mainFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:fabSize="normal"
+            app:elevation="0dp"
+            android:src="@drawable/icon_plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/messengerFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icon_messenger"
+            android:visibility="invisible"
+            app:elevation="0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/mainFabBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/whatsappFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icon_whatsapp"
+            android:visibility="invisible"
+            app:elevation="0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/messengerFabBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/twitterFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icon_twiiter"
+            android:visibility="invisible"
+            app:elevation="0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/whatsappFabBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/shareFabBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icon_share"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="invisible"
+            app:elevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/twitterFabBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

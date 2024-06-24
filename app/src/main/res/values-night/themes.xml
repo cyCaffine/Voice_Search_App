@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BestVoiceSearch" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/white_cloudy</item>
+        <item name="colorSurface">@color/black_cloudy</item>
+
+
+        <!-- for fab button customisation-->
+        <item name="colorPrimaryContainer">@color/grey</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+
+        <!-- for navigation text n icon customisation-->
+        <item name="colorOnSurfaceVariant">?attr/colorPrimaryVariant</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+
+        <item name="android:windowBackground">?attr/colorSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.BestVoiceSearch.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
+        <item name="fullscreenTextColor">@color/light_blue_A400</item>
+    </style>
+</resources>

@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BestVoiceSearch" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorSurface">@color/white_cloudy</item>
+        <!-- for fab button customisation-->
+        <item name="colorPrimaryContainer">@color/blue</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+
+        <!-- for navigation drawer text n icon customisation-->
+        <item name="colorOnSurfaceVariant">?attr/colorPrimaryVariant</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowBackground">?attr/colorSurface</item>
+
+    </style>
+
+    <style name="Theme.BestVoiceSearch" parent="Base.Theme.BestVoiceSearch" />
+
+    <!-- Toolbar customisation-->
+    <style name="ToolbarTitleAppearance" parent="Widget.Material3.Toolbar">
+        <item name="android:textStyle">bold</item>
+
+        <item name="android:textSize">@dimen/_15ssp</item>
+    </style>
+
+    <style name="ThemeOverlay.BestVoiceSearch.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+</resources>

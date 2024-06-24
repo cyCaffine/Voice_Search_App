@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--for light mode-->
+    <!-- bg color -->
+    <color name="white_cloudy">#DAECFA</color>
+    <!-- primary color -->
+    <color name="blue">#5574F3</color>
+
+
+    <!--for dark mode -->
+    <!-- bg color -->
+    <color name="black_cloudy">#292D32</color>
+    <!-- primary color -->
+    <color name="grey">#74777A</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+
+</resources>
